@@ -32,7 +32,6 @@ brew "terraform"
 # Development tools
 brew "adr-tools"
 brew "node"
-brew "python"
 
 # Casks
 cask "docker"

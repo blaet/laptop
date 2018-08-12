@@ -1,0 +1,51 @@
+#!/bin/sh
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\\n$fmt\\n" "$@"
+}
+
+# Exit immediately if a simple command exits with a non-zero status
+set -e
+
+# Install Homebrew
+if ! command -v brew >/dev/null; then
+  curl -fsS \
+    'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+fi
+
+fancy_echo "Installing Homebrew packages ..."
+brew update --force
+brew bundle --file=- <<EOF
+
+# Unix
+brew "bash-completion"
+brew "git"
+brew "gnupg"
+brew "less"
+brew "openssl"
+brew "vim"
+
+# Config management
+brew "ansible"
+brew "dockutil"
+brew "mas"
+brew "packer"
+brew "stow"
+brew "terraform"
+
+# Development tools
+brew "adr-tools"
+brew "node"
+brew "python"
+
+# Casks
+cask "docker"
+cask "macdown"
+cask "signal"
+cask "vagrant"
+cask "virtualbox"
+
+EOF

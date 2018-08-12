@@ -39,6 +39,5 @@ cask "docker"
 cask "macdown"
 cask "signal"
 cask "vagrant"
-cask "virtualbox"
 
 EOF

@@ -1,7 +1,10 @@
 Laptop
 ======
 
-Laptop is a script to set up an macOS laptop.
+[![Build Status](https://travis-ci.org/blaet/laptop.svg?branch=master)](https://travis-ci.org/blaet/laptop)
+
+Laptop is a script to set up a macOS laptop.
+
 
 Install
 -------

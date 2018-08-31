@@ -4,6 +4,7 @@
 set -e
 
 # Install Homebrew
+echo "Installing Homebrew"
 if ! command -v brew >/dev/null; then
   curl -fsS \
     'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
@@ -12,8 +13,10 @@ fi
 echo "Disabling Homebrew analytics"
 brew analytics off
 
-echo "Installing Homebrew packages ..."
-brew update --force
+echo "Updating Homebrew cache..."
+brew update -v --force
+
+echo "Installing Homebrewed packages..."
 brew bundle --file=- <<EOF
 
 # Unix
